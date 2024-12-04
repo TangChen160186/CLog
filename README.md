@@ -27,25 +27,25 @@
 
 控制台默认格式
 
-![b2d2f793-9e3f-4006-8ce2-ac1c31fd80c9](file:///C:/Users/16018/Pictures/Typedown/b2d2f793-9e3f-4006-8ce2-ac1c31fd80c9.png)
+<img src=".\imgs/b2d2f793-9e3f-4006-8ce2-ac1c31fd80c9.png" title="" alt="b2d2f793-9e3f-4006-8ce2-ac1c31fd80c9" data-align="inline">
 
 调整格式，在时间前面加一个固定文本并且调整颜色：
 
-![b42de7ff-94c9-4371-808e-5d9440ce6417](file:///C:/Users/16018/Pictures/Typedown/b42de7ff-94c9-4371-808e-5d9440ce6417.png)
+![b42de7ff-94c9-4371-808e-5d9440ce6417](./imgs/b42de7ff-94c9-4371-808e-5d9440ce6417.png)
 
 输出到文件：
 
-![e9c36c2f-26b9-4694-a606-6b820bf9c308](file:///C:/Users/16018/Pictures/Typedown/e9c36c2f-26b9-4694-a606-6b820bf9c308.png)
+![e9c36c2f-26b9-4694-a606-6b820bf9c308](./imgs/e9c36c2f-26b9-4694-a606-6b820bf9c308.png)
 
 roll文件：
 
-![79849681-2cf5-4d6e-a796-27239a70bf96](file:///C:/Users/16018/Pictures/Typedown/79849681-2cf5-4d6e-a796-27239a70bf96.png)
+![79849681-2cf5-4d6e-a796-27239a70bf96](./imgs/79849681-2cf5-4d6e-a796-27239a70bf96.png)
 
 ## 使用方法
 
 ### 1. 不适配MSVC编译器，如果使用Visual Studio，需要如下设置
 
-![612163bf-4675-4c21-822d-31df4ede8a7f](file:///C:/Users/16018/Pictures/Typedown/612163bf-4675-4c21-822d-31df4ede8a7f.png)
+![612163bf-4675-4c21-822d-31df4ede8a7f](./imgs/612163bf-4675-4c21-822d-31df4ede8a7f.png)
 
 ### 2. 创建日志器
 
@@ -211,5 +211,3 @@ logger_destroy(logger);
 #define LOG_ERROR(logger, ...) logger_log(logger, LOG_ERROR, __FILE__, __LINE__, __VA_ARGS__)
 #define LOG_FATAL(logger, ...) logger_log(logger, LOG_FATAL, __FILE__, __LINE__, __VA_ARGS__)
 ```
-
-
