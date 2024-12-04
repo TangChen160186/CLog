@@ -27,19 +27,19 @@
 
 控制台默认格式
 
-<img src=".\imgs/b2d2f793-9e3f-4006-8ce2-ac1c31fd80c9.png" title="" alt="b2d2f793-9e3f-4006-8ce2-ac1c31fd80c9" data-align="inline">
+<img src="public/imgs/b2d2f793-9e3f-4006-8ce2-ac1c31fd80c9.png" title="" alt="b2d2f793-9e3f-4006-8ce2-ac1c31fd80c9" data-align="inline">
 
 调整格式，在时间前面加一个固定文本并且调整颜色：
 
-![b42de7ff-94c9-4371-808e-5d9440ce6417](./imgs/b42de7ff-94c9-4371-808e-5d9440ce6417.png)
+![b42de7ff-94c9-4371-808e-5d9440ce6417](public/imgs/b42de7ff-94c9-4371-808e-5d9440ce6417.png)
 
 输出到文件：
 
-![e9c36c2f-26b9-4694-a606-6b820bf9c308](./imgs/e9c36c2f-26b9-4694-a606-6b820bf9c308.png)
+![e9c36c2f-26b9-4694-a606-6b820bf9c308](public/imgs/e9c36c2f-26b9-4694-a606-6b820bf9c308.png)
 
 roll文件：
 
-![79849681-2cf5-4d6e-a796-27239a70bf96](./imgs/79849681-2cf5-4d6e-a796-27239a70bf96.png)
+![79849681-2cf5-4d6e-a796-27239a70bf96](public/imgs/79849681-2cf5-4d6e-a796-27239a70bf96.png)
 
 ## 使用方法
 
