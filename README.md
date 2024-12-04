@@ -26,8 +26,7 @@
 ## 演示
 
 控制台默认格式
-
-<img src="public/imgs/b2d2f793-9e3f-4006-8ce2-ac1c31fd80c9.png" title="" alt="b2d2f793-9e3f-4006-8ce2-ac1c31fd80c9" data-align="inline">
+![b42de7ff-94c9-4371-808e-5d9440ce6417](Imgs/b2d2f793-9e3f-4006-8ce2-ac1c31fd80c9.png)
 
 调整格式，在时间前面加一个固定文本并且调整颜色：
 
@@ -35,17 +34,17 @@
 
 输出到文件：
 
-![e9c36c2f-26b9-4694-a606-6b820bf9c308](public/imgs/e9c36c2f-26b9-4694-a606-6b820bf9c308.png)
+![e9c36c2f-26b9-4694-a606-6b820bf9c308](imgs/e9c36c2f-26b9-4694-a606-6b820bf9c308.png)
 
 roll文件：
 
-![79849681-2cf5-4d6e-a796-27239a70bf96](public/imgs/79849681-2cf5-4d6e-a796-27239a70bf96.png)
+![79849681-2cf5-4d6e-a796-27239a70bf96](imgs/79849681-2cf5-4d6e-a796-27239a70bf96.png)
 
 ## 使用方法
 
 ### 1. 不适配MSVC编译器，如果使用Visual Studio，需要如下设置
 
-![612163bf-4675-4c21-822d-31df4ede8a7f](./imgs/612163bf-4675-4c21-822d-31df4ede8a7f.png)
+![612163bf-4675-4c21-822d-31df4ede8a7f](imgs/612163bf-4675-4c21-822d-31df4ede8a7f.png)
 
 ### 2. 创建日志器
 
