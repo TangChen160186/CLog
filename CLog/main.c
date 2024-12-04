@@ -7,6 +7,7 @@
 int main(void) {
     // 创建日志格式
     LogFormatElement elements[] = {
+        {LOG_FMT_TEXT, "[JGFA8HFAIUHFAIU]", NULL},
         {LOG_FMT_TIME, NULL, "[%Y-%m-%d %H:%M:%S]"},
         {LOG_FMT_TEXT, " [", NULL},
         {LOG_FMT_LOGGER_NAME, NULL, NULL},
@@ -21,8 +22,6 @@ int main(void) {
     LogConfig config = {
         .logger_name = "MyLogger",
         .async = true,
-        .auto_flush = true,
-        .flush_interval_ms = 5000,
         .format = format
     };
 
@@ -32,12 +31,20 @@ int main(void) {
         fprintf(stderr, "Failed to create logger\n");
         return EXIT_FAILURE;
     }
-
+    ColorConfig myColorConfig = {
+        .trace_color = "#5F9EA0",  // 浅蓝色
+        .debug_color = "rgb(0,255,255)",  // 青色
+        .info_color = "\x1b[32m",   // 绿色 (ANSI)
+        .warn_color = "#FFD700",    // 金色
+        .error_color = "rgb(255,0,0)",  // 红色
+        .fatal_color = "\x1b[35m"   // 紫色 (ANSI)
+    };
     // 创建控制台Sink
     SinkConfig console_config = {
         .min_level = LOG_DEBUG,
         .use_color = true,
-        .format = NULL  // 使用全局格式
+        .color_config = &myColorConfig,
+        .format = NULL,  // 使用全局格式
     };
     LogSink* console_sink = console_sink_create(&console_config);
     if (!console_sink) {
@@ -79,15 +86,13 @@ int main(void) {
     logger_add_sink(logger, rolling_sink);
 
     // 记录不同级别的日志
-    LOG_TRACE(logger, "This is a trace message");
+    LOG_TRACE(logger, "This is a trace message,%d", 100);
     LOG_DEBUG(logger, "This is a debug message");
     LOG_INFO(logger, "This is an info message");
     LOG_WARN(logger, "This is a warning message");
     LOG_ERROR(logger, "This is an error message");
     LOG_FATAL(logger, "This is a fatal message");
 
-    // 手动刷新日志
-    logger_flush(logger);
     // 销毁Logger
     logger_destroy(logger);
     return EXIT_SUCCESS;

@@ -19,12 +19,9 @@ typedef struct Logger {
     // 异步相关
     thrd_t worker_thread;        /**< 工作线程，用于异步日志处理 */
     mtx_t queue_mutex;           /**< 用于保护日志队列的互斥锁 */
+    mtx_t queue_cnd;           /**< 用于保护日志队列的互斥锁 */
     struct LogMessage* queue_head; /**< 日志消息队列的头指针 */
     struct LogMessage* queue_tail; /**< 日志消息队列的尾指针 */
-    bool auto_flush;             /**< 是否自动刷新日志 */
-    size_t flush_interval_ms;    /**< 自动刷新日志的时间间隔（毫秒） */
-    time_t last_flush_time;      /**< 上次刷新日志的时间戳 */
-
     // 格式相关
     struct LogFormat* format;    /**< 日志格式配置 */
 } Logger;

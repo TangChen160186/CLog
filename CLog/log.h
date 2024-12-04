@@ -133,8 +133,6 @@ typedef struct LogSink {
 typedef struct LogConfig {
     const char* logger_name;     /**< 日志器的名称 */
     bool async;                  /**< 是否异步记录日志 */
-    bool auto_flush;             /**< 是否自动刷新日志 */
-    size_t flush_interval_ms;    /**< 刷新日志的时间间隔（毫秒） */
     LogFormat* format;           /**< 全局格式配置 */
 } LogConfig;
 
@@ -165,13 +163,6 @@ struct Logger* logger_create(const LogConfig* config);
  * @param logger 指向要销毁的日志器。
  */
 void logger_destroy(struct Logger* logger);
-
-/**
- * @brief 刷新日志器，确保所有日志消息都被处理。
- *
- * @param logger 指向要刷新的日志器。
- */
-void logger_flush(struct Logger* logger);
 
 /**
  * @brief 创建一个控制台输出目标。

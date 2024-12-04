@@ -532,22 +532,21 @@ static bool should_roll(RollingFileData* data) {
         bool should_roll_time = false;
         switch (data->roll_config.time_unit) {
         case TIME_UNIT_MINUTE:
-            should_roll_time = (current_tm->tm_min - last_tm->tm_min) >=
-                data->roll_config.time_interval;
+            should_roll_time = (current_time - data->last_roll_time) >=
+                (data->roll_config.time_interval * 60);
             break;
         case TIME_UNIT_HOUR:
-            should_roll_time = (current_tm->tm_hour - last_tm->tm_hour) >=
-                data->roll_config.time_interval;
+            should_roll_time = (current_time - data->last_roll_time) >=
+                (data->roll_config.time_interval * 3600);
             break;
         case TIME_UNIT_DAY:
-            should_roll_time = (current_tm->tm_mday - last_tm->tm_mday) >=
-                data->roll_config.time_interval;
+            should_roll_time = (current_time - data->last_roll_time) >=
+                (data->roll_config.time_interval * 24 * 3600);
             break;
-        case TIME_UNIT_WEEK: {
-            time_t diff = current_time - data->last_roll_time;
-            should_roll_time = diff >= (data->roll_config.time_interval * 7 * 24 * 3600);
+        case TIME_UNIT_WEEK:
+            should_roll_time = (current_time - data->last_roll_time) >=
+                (data->roll_config.time_interval * 7 * 24 * 3600);
             break;
-        }
         case TIME_UNIT_MONTH: {
             int month_diff = (current_tm->tm_year - last_tm->tm_year) * 12 +
                 (current_tm->tm_mon - last_tm->tm_mon);
